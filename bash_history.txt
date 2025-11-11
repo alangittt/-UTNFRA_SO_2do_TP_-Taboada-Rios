@@ -1,0 +1,97 @@
+nano Punto_A.sh
+chmod +x Punto_A.sh
+./Punto_A.sh
+lsblk
+mkdir ~/RTA_Examen_20251110
+mv Punto_A.sh ~/RTA_Examen_20251110/
+cd ~/RTA_Examen_20251110
+chmod +x Punto_A.sh
+./Punto_A.sh
+whoami
+ls
+chmod +x Punto_A.sh
+sudo ./Punto_A.sh
+lsblk
+echo -e "docker\nansible\nbash\nso" > Lista_Grupos.txt
+chmod +x AltaUser-Groups.sh
+pwd
+ls
+nano AltaUser-Groups.sh
+ls
+mkdir -p ~/UTN-FRA_SO_2do_TP_Taboada/202406/bash_script
+nano ~/UTN-FRA_SO_2do_TP_Taboada/202406/bash_script/Lista_Usuarios.txt
+sudo nano /usr/local/bin/TaboadaAltaUser-Groups.sh
+nano ~/UTN-FRA_SO_2do_TP_Taboada/202406/bash_script/Lista_Usuarios.txt
+pwd
+docker --version
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo docker build -t web1-taboada .
+~/UTN-FRA_SO_2do_TP_Taboada/202406/docker
+cd ~/UTN-FRA_SO_2do_TP_Taboada/202406/docker
+mkdir -p ~/UTN-FRA_SO_2do_TP_Taboada/202406/docker
+cd ~/UTN-FRA_SO_2do_TP_Taboada/202406/docker
+nano index.html
+nano Dockerfile
+sudo docker build -t web1-taboada .
+sudo docker login
+sudo docker tag web1-taboada taboalan/web1-taboada
+sudo docker push taboalan/web1-taboada
+nano run.sh
+chmod +x run.sh
+~/UTN-FRA_SO_2do_TP_Taboada/202406/docker
+ls
+zip -r 202406.zip 202406/
+sudo apt update 
+sudo apt install zip
+zip -v
+zip -r 202406.zip 202406/
+cd ~/UTN-FRA_SO_2do_TP_Taboada
+zip -r 202406.zip 202406/
+ls -lh 202406.zip
+ansible --version
+sudo apt update
+sudo apt install wget gpg
+UBUNTU_CODENAME=jammy
+wget -O- "https://keyserver.ubuntu.com/pks/lookup?fingerprint=on&op=get&search=0x6125E2A8C77F2818FB7BD15B93C4A3FD7BB9C367" | sudo gpg --dearmour -o /usr/share/keyrings/ansible-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/ansible-archive-keyring.gpg] http://ppa.launchpad.net/ansible/ansible/ubuntu $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/ansible.list
+sudo apt update && sudo apt install ansible
+mkdir -p ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible
+cd ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible
+ansible-galaxy init 2do_parcial
+~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/2do_parcial/templates/
+nano datos_alumno.txt.j2
+cat datos_alumno.txt.j2
+nano datos_equipo.txt.j2
+hostname
+hostname -I
+lsb_release -a
+nano datos_equipo.txt.j2
+nproc
+nano datos_equipo.txt.j2
+lsb_release -d
+nano datos_equipo.txt.j2
+~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/2do_parcial/tasks/main.yml
+sudo nano ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/2do_parcial/tasks/main.yml
+~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/playbook.yml
+nano ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/playbook.yml
+cat ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/playbook.yml
+nano ~/UTN-FRA_SO_2do_TP_Taboada/202406/ansible/playbook.yml
+sudo usermod -aG 2PSupervisores alan
+sudo whoami
+nano ~/RTA_Examen_20251111/Punto_D.sh
+cat ~/RTA_Examen_20251111/Punto_D.sh
+mkdir -p ~/RTA_Examen_20251111
+nano ~/RTA_Examen_20251111/Punto_D.sh
+chmod +x ~/RTA_Examen_20251111/Punto_D.sh
+cd ~/UTN-FRA_SO_2do_TP_Taboada
+history -a
+cp ~/.bash_history ./bash_history.txt
+ls -R
+ls ~ | grep RTA_Examen
+ls ~/RTA_Examen_20251111
+ls ~/UTN-FRA_SO_2do_TP_Taboada/202406
+history -a

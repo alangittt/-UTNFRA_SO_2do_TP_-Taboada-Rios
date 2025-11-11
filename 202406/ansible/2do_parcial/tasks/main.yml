@@ -1,0 +1,19 @@
+- name: Crear archivo datos_alumno.txt
+  template:
+    src: datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+
+- name: Crear archivo datos_equipo.txt
+  template:
+    src: datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+
+- name: Permitir sudo sin contraseña al grupo 2PSupervisores
+  copy:
+    dest: /etc/sudoers.d/2psupervisores
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD:ALL\n"
+    owner: root
+    group: root
+    mode: '0440'
+---
+# tasks file for 2do_parcial
