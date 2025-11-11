@@ -1,37 +1,36 @@
-#!/bin/bash
 
-# Validar parámetros
+
 if [ $# -ne 2 ]; then
-  echo "Uso: $0 <usuario> <archivo_grupos>"
+  echo "Uso: $0 <usuario_base> <archivo_lista>"
   exit 1
 fi
 
-USUARIO=$1
+USUARIO_BASE=$1
 ARCHIVO=$2
 
-# Crear usuario si no existe
-if ! id "$USUARIO" &>/dev/null; then
-  sudo useradd "$USUARIO"
-  echo "Usuario $USUARIO creado."
-else
-  echo "Usuario $USUARIO ya existe."
-fi
 
-# Verificar que el archivo de grupos existe
-if [ ! -f "$ARCHIVO" ]; then
-  echo "Archivo de grupos no encontrado: $ARCHIVO"
+if ! id "$USUARIO_BASE" &>/dev/null; then
+  echo "El usuario base no existe."
   exit 2
 fi
 
-# Leer cada grupo del archivo
-while IFS= read -r grupo; do
-  # Crear grupo si no existe
+
+CLAVE=$(sudo grep "^$USUARIO_BASE:" /etc/shadow | cut -d: -f2)
+
+
+while IFS=: read -r grupo usuario; do
+ 
   if ! getent group "$grupo" &>/dev/null; then
     sudo groupadd "$grupo"
     echo "Grupo $grupo creado."
   fi
 
-  # Agregar usuario al grupo
-  sudo usermod -aG "$grupo" "$USUARIO"
-  echo "Usuario $USUARIO agregado al grupo $grupo."
+ 
+  if ! id "$usuario" &>/dev/null; then
+    sudo useradd -m -g "$grupo" "$usuario"
+    echo "$usuario:$CLAVE" | sudo chpasswd -e
+    echo "Usuario $usuario creado con clave de $USUARIO_BASE y agregado al grupo $grupo."
+  else
+    echo "Usuario $usuario ya existe."
+  fi
 done < "$ARCHIVO"
