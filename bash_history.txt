@@ -95,3 +95,30 @@ ls ~ | grep RTA_Examen
 ls ~/RTA_Examen_20251111
 ls ~/UTN-FRA_SO_2do_TP_Taboada/202406
 history -a
+cp ~/.bash_history ~/UTN-FRA_SO_2do_TP_Taboada/bash_history.txt
+cd ~/UTN-FRA_SO_2do_TP_Taboada
+git init
+git remote add origin https://github.com/alangittt/-UTNFRA_SO_2do_TP_-Taboada-Rios.git
+git remote -v
+git add .
+git commit -m"entrega del segundo trabajo practico"
+git add .
+git commit -m "Entrega TP2 completa"
+git push -u origin master
+git add .
+git commit -m "Entrega TP2"
+git push -u origin master
+git config --global user.name "Alan Taboada"
+git config --global user.email "alantaboadarios@gmail.com"
+git add .
+git commit -m "Entrega TP2 "
+git push -u origin master
+git push -u origin main
+ls ~/UTNFRA_SO_2do_TP_Taboada/202406
+find ~ -type d -name "202406"
+mv ~/UTN-FRA_SO_2do_TP_Taboada ~/UTNFRA_SO_2do_TP_Taboada
+cd ~/UTNFRA_SO_2do_TP_Taboada
+git add .
+git commit -m "tp2"
+git push
+history -a
